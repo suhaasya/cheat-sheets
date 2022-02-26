@@ -1,4 +1,3 @@
-
 # MongoDb commands
 
 ## Database commands
@@ -9,7 +8,7 @@ View all databases
   show dbs
 ```
 
-Create a new or switch databases 
+Create a new or switch databases
 
 ```bash
   use dbName
@@ -29,13 +28,13 @@ Show Collections
   show Collections
 ```
 
-Create a new collection 
+Create a new collection
 
 ```bash
   db.createCollection('collection name')
 ```
 
-Drop/Delete a collection 
+Drop/Delete a collection
 
 ```bash
   db.collection-name.drop()
@@ -43,28 +42,28 @@ Drop/Delete a collection
 
 ## Row/Document commands
 
-Show all Rows in a Collection  
+Show all Rows in a Collection
 
 ```bash
-  db.comments.find()
+  db.collection-name.find()
 ```
 
 Show all Rows in a Collection (Prettified)
 
 ```bash
-  db.comments.find().pretty()
+  db.collection-name.find().pretty()
 ```
 
 Find the first row matching the object
 
 ```bash
-  db.comments.findOne({key:value})
+  db.collection-name.findOne({key:value})
 ```
 
 Insert a row in Document
 
 ```bash
-  db.comments.insert({
+  db.collection-name.insert({
     key:value
  })
 ```
@@ -72,7 +71,7 @@ Insert a row in Document
 Insert many rows in Document
 
 ```bash
-  db.comments.insert([{key:value},
+  db.collection-name.insert([{key:value},
   {key:value},
   {key:value}
   ])
@@ -81,64 +80,57 @@ Insert many rows in Document
 Search in a MongoDb Database
 
 ```bash
-  db.comments.find({key:value})
+  db.collection-name.find({key:value})
 ```
 
-Less than 
+Less than
+
 ```bash
-  db.comments.find({key: {$lt: value}})
+  db.collection-name.find({key: {$lt: value}})
 ```
 
 Less than equal to
+
 ```bash
-  db.comments.find({key: {$lte: value}})
+  db.collection-name.find({key: {$lte: value}})
 ```
 
-Greater than 
+Greater than
+
 ```bash
-  db.comments.find({key: {$gt: value}})
+  db.collection-name.find({key: {$gt: value}})
 ```
 
 Greater than equal to
+
 ```bash
-  db.comments.find({key: {$gte: value}})
+  db.collection-name.find({key: {$gte: value}})
 ```
 
 Limit the number of rows in output
 
 ```bash
-  db.comments.find().limit(2)
+  db.collection-name.find().limit(2)
 ```
-
-
-
 
 Update a row
 
 ```bash
-  db.comments.update({key: value},
+  db.collection-name.update({key: value},
 {key:updated-value}, {upsert: true})
 ```
 
 Mongodb Rename Operator
 
 ```bash
-  db.comments.update({key:value},
+  db.collection-name.update({key:value},
 {$rename:{
     key: newkey
 }})
 ```
 
-Delete Row 
+Delete Row
 
 ```bash
-  db.comments.remove({key:value})
+  db.collection-name.remove({key:value})
 ```
-
-
-
-
-
-
-
-    
